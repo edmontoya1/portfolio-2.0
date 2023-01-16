@@ -1,9 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
-import Image from "next/image";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import styles from "../styles/Home.module.css";
 import { Experience, PageInfo, Skill, Project, Social } from "../typings";
 import { fetchPageInfo } from "../utils/fetchPageInfo";
 import { fetchExperiences } from "../utils/fetchExperience";
@@ -17,7 +15,6 @@ import Projects from "../components/Projects";
 import ContactMe from "../components/ContactMe";
 import Link from "next/link";
 import { HomeIcon } from "@heroicons/react/24/solid";
-import Script from "next/script";
 
 type Props = {
   pageInfo: PageInfo;
@@ -30,8 +27,8 @@ type Props = {
 const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
   return (
     <div
-      className="bg-lightBackground text-darkBlack h-screen snap-y snap-mandatory
-    overflow-y-scroll overflow-x-hidden z-0 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
+      className="z-0 h-screen snap-y snap-mandatory overflow-y-scroll
+    bg-lightBackground text-darkBlack overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-darkGreen/80"
     >
       <Head>
         <link
@@ -54,19 +51,6 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
         <link rel="manifest" href="/site.webmanifest" />
         <title>{"Eduardo Montoya | Portfolio"}</title>
       </Head>
-
-      {/* Google Analytics */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-LV1LN9VBT0"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
-           gtag('config', 'G-LV1LN9VBT0')`}
-        ;
-      </Script>
 
       {/* Header */}
       <Header socials={socials} />
@@ -104,8 +88,8 @@ const Home = ({ pageInfo, experiences, projects, skills, socials }: Props) => {
       <Link href="#hero">
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
-            <div className="h-10 w-10 bg-darkGreen/80 rounded-full flex items-center justify-center">
-              <HomeIcon className="h-7 w-17 pb-0.5 hover:grayscale-100 text-white animate-pulse" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-darkGreen/80">
+              <HomeIcon className="w-17 hover:grayscale-100 h-7 animate-pulse pb-0.5 text-white" />
             </div>
           </div>
         </footer>
