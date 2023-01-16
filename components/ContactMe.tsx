@@ -14,44 +14,44 @@ type Inputs = {
 export default function ContactMe({}: Props) {
   const { register, handleSubmit } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => {
-    window.location.href = `mailto:mitch.sparrow@hotmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}.${formData.message}`;
+    window.location.href = `mailto:montoyaeduardo2015@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}.${formData.message}`;
   };
 
   return (
-    <div className="h-screen flex relative flex-col text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center">
-      <h3 className="absolute top-20 md:top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+    <div className="relative mx-auto flex h-screen max-w-7xl flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left">
+      <h3 className="absolute top-20 text-xl uppercase tracking-[20px] text-gray-500 md:top-24 md:text-2xl">
         Contact
       </h3>
       <div className="flex flex-col space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10">
-        <h4 className="text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-center">
+        <h4 className="pt-4 text-center text-xl font-semibold md:text-2xl lg:text-3xl 2xl:text-4xl">
           I have got just what you need.{" "}
-          <span className="decoration-darkGreen/50 underline">Lets talk.</span>
+          <span className="underline decoration-darkGreen/50">Lets talk.</span>
         </h4>
 
         <div className="space-y-1 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
-          <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-            <p className="text-lg md:text-2xl lg:text-2xl">+44 78 108 35 079</p>
+          <div className="flex items-center justify-center space-x-5">
+            <PhoneIcon className="h-7 w-7 animate-pulse text-darkGreen" />
+            <p className="text-lg md:text-2xl lg:text-2xl">+1(402) 214-7320</p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-darkGreen h-7 w-7 animate-pulse" />
+          <div className="flex items-center justify-center space-x-5">
+            <EnvelopeIcon className="h-7 w-7 animate-pulse text-darkGreen" />
             <p className="text-lg md:text-2xl lg:text-2xl">
-              mitch.sparrow@hotmail.com
+              montoyaeduardo2015@gamil.com
             </p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-darkGreen h-7 w-7 animate-pulse" />
+          <div className="flex items-center justify-center space-x-5">
+            <MapPinIcon className="h-7 w-7 animate-pulse text-darkGreen" />
             <p className="text-lg md:text-2xl lg:text-2xl">
-              Glasgow, United Kingdom
+              Nebraska, United States
             </p>
           </div>
         </div>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col space-y-2 w-80 md:w-fit mx-auto"
+          className="mx-auto flex w-80 flex-col space-y-2 md:w-fit"
         >
-          <div className="md:flex md:space-x-2 space-y-2 md:space-y-0 ">
+          <div className="space-y-2 md:flex md:space-x-2 md:space-y-0 ">
             <input
               {...register("name")}
               placeholder="Name"
@@ -76,7 +76,7 @@ export default function ContactMe({}: Props) {
             placeholder="Message"
             className="contactInput"
           />
-          <button className="bg-lightGreen py-3 md:py-5 px-10 rounded-lg text-white font-bold text-lg">
+          <button className="rounded-lg bg-lightGreen py-3 px-10 text-lg font-bold text-white md:py-5">
             {" "}
             Submit
           </button>
