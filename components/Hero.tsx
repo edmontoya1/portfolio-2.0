@@ -19,20 +19,14 @@ export default function Hero({ pageInfo }: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center">
       <BackgroundCircles />
 
-      <img
-        className="relative rounded-full h-32 w-32 mx-auto object-cover"
-        src={urlFor(pageInfo?.heroImage).url()}
-        alt=""
-      />
-
       <div className="z-20">
-        <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[10px] md:tracking-[15px]">
+        <h2 className="pb-2 text-sm uppercase tracking-[10px] text-gray-500 md:tracking-[15px]">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-2xl md:text-5xl lg:text-6xl font-semibold px-10">
+        <h1 className="p-10 text-2xl font-semibold md:text-5xl lg:text-6xl">
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#68B2A0" />
         </h1>
